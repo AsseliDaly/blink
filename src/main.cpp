@@ -87,8 +87,10 @@ void loop() {
     if (Firebase.RTDB.getString(&fbdo, "/led2")) {
       if (fbdo.dataType() == "string") {
         stringVal = fbdo.StringData();
-        Serial.println(intValue);
-        digitalWrite(LED_BUILTIN,intValue);
+        Serial.println(stringVal);
+        if(stringVal=='on'){stringVal='HIGH';}
+        elif(stringVal=='off'){stringVal='LOW';}
+        digitalWrite(LED_BUILTIN,stringVal);
       }*/
     }
 
