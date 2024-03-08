@@ -66,7 +66,7 @@ void setup() {
 void loop() {
   
 // put function definitions here:
-  
+    
   
     if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > 5000 || sendDataPrevMillis == 0)) {
     sendDataPrevMillis = millis();
@@ -80,6 +80,23 @@ void loop() {
     else {
       Serial.println(fbdo.errorReason());
     }
+
+   /*this fun is for getting a string value from fb rtdb ya iheeb
+   if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > 5000 || sendDataPrevMillis == 0)) {
+    sendDataPrevMillis = millis();
+    if (Firebase.RTDB.getString(&fbdo, "/led2")) {
+      if (fbdo.dataType() == "string") {
+        stringVal = fbdo.StringData();
+        Serial.println(intValue);
+        digitalWrite(LED_BUILTIN,intValue);
+      }*/
+    }
+
+
+
+
+
+
 
   
 }
